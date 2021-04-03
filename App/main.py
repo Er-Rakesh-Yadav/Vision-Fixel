@@ -6,11 +6,11 @@ class Mainwindow(MDBoxLayout):
     pass
 
 
-class uiApp(MDApp):
+class MainApp(MDApp):
     def build(self):
         MDApp.title = "Vision Fixel"
         MDApp.icon = 'vision_icon.png'
         return Mainwindow()
 
 
-uiApp().run()
+MainApp().run()
