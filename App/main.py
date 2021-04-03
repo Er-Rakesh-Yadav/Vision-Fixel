@@ -1,10 +1,16 @@
 from kivymd.app import MDApp
-from kivymd.uix.label import MDLabel
+from kivymd.uix.boxlayout import MDBoxLayout
 
 
-class MainApp(MDApp):
+class Mainwindow(MDBoxLayout):
+    pass
+
+
+class uiApp(MDApp):
     def build(self):
-        return MDLabel(text="Hello, World", halign="center")
+        MDApp.title = "Vision Fixel"
+        MDApp.icon = 'vision_icon.png'
+        return Mainwindow()
 
 
-MainApp().run()
+uiApp().run()
