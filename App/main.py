@@ -26,7 +26,7 @@ Screen:
         MDBottomNavigationItem:
             name: 'screen 1'
             text: 'Home'
-            icon: '2.png'
+            icon: 'App/img/2.png'
 
             MDLabel:
                 text: 'HOME'
@@ -35,7 +35,7 @@ Screen:
         MDBottomNavigationItem:
             name: 'screen 2'
             text: 'EXIT'
-            icon: '3.png'
+            icon: 'App/img/3.png'
 
             MDLabel:
                 text: 'BYE BYEEE!!!'
@@ -44,7 +44,7 @@ Screen:
         MDBottomNavigationItem:
             name: 'screen 3'
             text: 'About'
-            icon: 'a.png'
+            icon: 'App/img/a.png'
 
             MDLabel:
                 text: 'About'
