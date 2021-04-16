@@ -2,14 +2,14 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
 # for Main Screen Size
-# from kivy.core.window import  Window
-# Window.size = (400,600)
+from kivy.core.window import Window
+
+Window.size = (400, 600)
 
 # Builder-String
 kv = '''
 ScreenManager:
     MainScreen:
-    SecondScreen:
 
 <MainScreen>:
     name: 'Main_screen'
@@ -31,7 +31,7 @@ ScreenManager:
                             type: 'bottom'
                             mode: 'end'
                             icon: 'upload'
-                            on_action_button: app.navigation_draw()                       
+                            on_action_button: app.navigation_draw()                     
                     Widget:
                     
         MDNavigationDrawer:
@@ -69,20 +69,7 @@ ScreenManager:
                             text: 'Yadav Ji'
                             IconLeftWidget:
                                 icon:'send'
-                
-                    
-                
-                
-
-
-
-<SecondScreen>:
-    name:'2_screen'
-    MDLabel:
-        text: 'OK'
-        font_size: 10
-        halign: 'auto'
-      
+                     
 '''
 
 
@@ -90,13 +77,8 @@ class MainScreen(Screen):
     pass
 
 
-class SecondScreen(Screen):
-    pass
-
-
 loadScreen = ScreenManager()
 loadScreen.add_widget(MainScreen(name='Main_screen'))
-loadScreen.add_widget(SecondScreen(name='2_screen'))
 
 
 class App(MDApp):
@@ -110,9 +92,6 @@ class App(MDApp):
 
     def navigation_draw(self):
         print("Navigation Is Working")
-
-    def nav_drawer(self):
-        print("Nav")
 
 
 App().run()

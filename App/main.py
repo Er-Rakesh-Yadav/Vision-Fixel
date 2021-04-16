@@ -2,7 +2,8 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.core.window import Window
-Window.size = (400,600)
+
+Window.size = (400, 600)
 
 # Builder-String
 kv = '''
@@ -17,9 +18,7 @@ ScreenManager:
         halign: 'center'
         font_size: 150
         theme_text_color: 'Custom'
-        text_color: 224,0,0,1 
-        
-        
+        text_color: 224,0,0,1    
     MDLabel:
         text: 'VISION-FIXEL'
         halign: 'center'
@@ -31,21 +30,72 @@ ScreenManager:
         icon: 'home'
         user_font_size: '20sp'
         pos_hint: {'center_x':0.5,'center_y':0.4}
-        on_release:
-            root_manager.current = '2_screen'
+        on_press:
+            root.manager.current = 'Main_screen'
         
 
     
 <SecondScreen>:
-    name:'2_screen'
-    MDLabel:
-        text: 'OK'
-        font_size: 10
-        halign: 'auto'
-    MDIconButton:
-        icon: 'back'
-        on_touch_up:
-            root_manager.current = '1_screen'      
+    name: 'Main_screen'
+    NavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation:'vertical'
+                    MDToolbar:
+                        title: 'Menu'
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
+                    
+                    MDBottomAppBar:
+                        MDToolbar:
+                            title:'SAVE'
+                            elevation: 5
+                            left_action_items: [['download', lambda x: app.navigation_draw()]]
+                            type: 'bottom'
+                            mode: 'end'
+                            icon: 'upload'
+                                                           
+                    Widget:
+                    
+                Image:
+                    source: 'App/img/bg.jpg'
+                   
+        MDNavigationDrawer:
+            id: nav_drawer
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+                
+                Image:
+                    source:'01.jpg'
+                    
+                MDLabel:
+                    text: 'EFFECTS '
+                    font_style: 'H5'
+                    size_hint_y: None
+                    halign: 'center'
+                    height: self.texture_size[1]
+                
+                ScrollView:
+                    MDList:
+                        OneLineIconListItem:
+                            text: 'Pgglluuu'
+                            IconLeftWidget:
+                                icon: 'face'
+                        OneLineIconListItem:
+                            text: 'Subbuuu '
+                            IconLeftWidget:
+                                icon:'download'
+                        OneLineIconListItem:
+                            text: 'MOTO'
+                            IconLeftWidget:
+                                icon: 'upload'
+                        OneLineIconListItem:
+                            text: 'Yadav Ji'
+                            IconLeftWidget:
+                                icon:'send'    
 '''
 
 
@@ -62,19 +112,18 @@ loadScreen.add_widget(FirstScreen(name='1_screen'))
 loadScreen.add_widget(SecondScreen(name='2_screen'))
 
 
+def navigation_draw():
+    print("Navigation Is Working")
+
+
 class MainApp(MDApp):
     def build(self):
         MDApp.title = "Vision Fixel"
         MDApp.icon = 'vision_icon.png'
-        self.theme_cls.primary_palette = 'Green'
-        self.theme_cls.primary_hue = '200'
         screen = Screen()
         loadKv = Builder.load_string(kv)
         screen.add_widget(loadKv)
         return screen
-
-    def theme_changer(self):
-        self.load_kv
 
 
 MainApp().run()
