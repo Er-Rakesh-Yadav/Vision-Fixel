@@ -1,63 +1,80 @@
 from kivymd.app import MDApp
 from kivy.lang import Builder
+from kivy.uix.screenmanager import Screen, ScreenManager
+from kivy.core.window import Window
+Window.size = (400,600)
 
-#Builder-String
+# Builder-String
 kv = '''
-Screen:
-    MDBoxLayout:
-        orientation: "vertical"
+ScreenManager:
+    FirstScreen:
+    SecondScreen:
+     
+<FirstScreen>:
+    name: '1_screen'
+    MDIcon:
+        icon: 'laptop'
+        halign: 'center'
+        font_size: 150
+        theme_text_color: 'Custom'
+        text_color: 224,0,0,1 
+        
+        
+    MDLabel:
+        text: 'VISION-FIXEL'
+        halign: 'center'
+        theme_text_color: 'Custom'
+        text_color: 0, 0, 1, 1
+        font_style: 'Subtitle2'
+        font_size: 15
+    MDFloatingActionButton:
+        icon: 'home'
+        user_font_size: '20sp'
+        pos_hint: {'center_x':0.5,'center_y':0.4}
+        on_release:
+            root_manager.current = '2_screen'
+        
 
-        MDToolbar:
-            title: "Vision-Fixel"
-            halign: 'right'
-
-    MDBoxLayout:
-        orientation:'vertical'
-
-    MDToolbar:
-        title: 'Bottom navigation'
-        md_bg_color: .2, .2, .2, 1
-        specific_text_color: 1, 1, 1, 1
-
-    MDBottomNavigation:
-        panel_color: .2, .2, .2, 1
-        text_color_active: 1, 0, 0, 1
-
-        MDBottomNavigationItem:
-            name: 'screen 1'
-            text: 'Home'
-            icon: 'App/img/2.png'
-
-            MDLabel:
-                text: 'HOME'
-                halign: 'center'
-
-        MDBottomNavigationItem:
-            name: 'screen 2'
-            text: 'EXIT'
-            icon: 'App/img/3.png'
-
-            MDLabel:
-                text: 'BYE BYEEE!!!'
-                halign: 'center'
-
-        MDBottomNavigationItem:
-            name: 'screen 3'
-            text: 'About'
-            icon: 'App/img/a.png'
-
-            MDLabel:
-                text: 'About'
-                halign: 'center'
-
+    
+<SecondScreen>:
+    name:'2_screen'
+    MDLabel:
+        text: 'OK'
+        font_size: 10
+        halign: 'auto'
+    MDIconButton:
+        icon: 'back'
+        on_touch_up:
+            root_manager.current = '1_screen'      
 '''
+
+
+class FirstScreen(Screen):
+    pass
+
+
+class SecondScreen(Screen):
+    pass
+
+
+loadScreen = ScreenManager()
+loadScreen.add_widget(FirstScreen(name='1_screen'))
+loadScreen.add_widget(SecondScreen(name='2_screen'))
 
 
 class MainApp(MDApp):
     def build(self):
         MDApp.title = "Vision Fixel"
         MDApp.icon = 'vision_icon.png'
-        return Builder.load_string(kv)
+        self.theme_cls.primary_palette = 'Green'
+        self.theme_cls.primary_hue = '200'
+        screen = Screen()
+        loadKv = Builder.load_string(kv)
+        screen.add_widget(loadKv)
+        return screen
+
+    def theme_changer(self):
+        self.load_kv
 
 
 MainApp().run()
