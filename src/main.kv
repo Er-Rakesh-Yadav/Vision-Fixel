@@ -1,0 +1,121 @@
+<FileLoader>:
+    filechooser: filechooser
+
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        canvas.before:
+            Color:
+                rgba : rgba('#454545')
+            Rectangle:
+                pos: self.pos
+                size:self.size
+        FileChooserIconView:
+
+            id: filechooser
+            path : '/'
+            multiselect: False
+            show_hidden:True
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release:app.fileloaderscreen_to_mainscreen()
+
+            Button:
+                text: "Load"
+                on_release: app.load(filechooser.path, filechooser.selection)
+
+<FirstScreen>:
+    MDIcon:
+        icon: 'laptop'
+        halign: 'center'
+        font_size: 150
+        theme_text_color: 'Custom'
+        text_color: 224,0,0,1
+    MDLabel:
+        text: 'VISION-FIXEL'
+        halign: 'center'
+        theme_text_color: 'Custom'
+        text_color: 0, 0, 1, 1
+        font_style: 'Subtitle2'
+        font_size: 15
+    MDFloatingActionButton:
+        icon: 'home'
+        halign: 'center'
+        font_size: 15
+        pos_hint: {'center_x':0.5,'center_y':0.4}
+        on_press: app.first_to_second()
+
+<SecondScreen>:
+    img: img
+    BoxLayout:
+        NavigationLayout:
+            ScreenManager:
+                Screen:
+                    BoxLayout:
+                        orientation:'vertical'
+                        MDToolbar:
+                            title: 'Menu'
+                            elevation: 10
+                            left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
+
+                        MDBottomAppBar:
+                            MDToolbar:
+                                title:'SAVE'
+                                elevation: 5
+                                left_action_items: [['download', lambda x: app.save()]]
+                                type: 'bottom'
+                                mode: 'end'
+                                icon: 'upload'
+                                on_action_button:app.mainscreen_to_fileloaderscreen()
+
+                        Widget:
+
+                    Image:
+                        id:img
+                        source: 'App/img/wlcm.png'
+
+            MDNavigationDrawer:
+                id: nav_drawer
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: '8dp'
+                    padding: '8dp'
+
+                    Image:
+                        source:'App/img/a.png'
+
+                    MDLabel:
+                        text: 'EFFECTS '
+                        font_style: 'H5'
+                        size_hint_y: None
+                        halign: 'center'
+                        height: self.texture_size[1]
+
+                    ScrollView:
+                        MDList:
+                            OneLineIconListItem:
+                                text:'Erosion'
+                                IconLeftWidget:
+                                    icon:'airballoon'
+                            OneLineIconListItem:
+                                text:'Dilation'
+                                IconLeftWidget:
+                                    icon:'bulma'
+                            OneLineIconListItem:
+                                text:'Edge Detection'
+                                IconLeftWidget:
+                                    icon:'panda'
+                            OneLineIconListItem:
+                                text:'Contrast Adjustment'
+                                IconLeftWidget:
+                                    icon:'beach'
+
+                            OneLineIconListItem:
+                                text:'Image Enchance Color'
+                                IconLeftWidget:
+                                    icon:'bee-flower'

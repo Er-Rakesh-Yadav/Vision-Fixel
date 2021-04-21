@@ -59,7 +59,7 @@ ScreenManager:
                     Widget:
                     
                 Image:
-                    source: 'App/img/bg.jpg'
+                    source: 'img/bg.jpg'
                    
         MDNavigationDrawer:
             id: nav_drawer
@@ -69,7 +69,7 @@ ScreenManager:
                 padding: '8dp'
                 
                 Image:
-                    source:'01.jpg'
+                    source:'img/01.jpg'
                     
                 MDLabel:
                     text: 'EFFECTS '
