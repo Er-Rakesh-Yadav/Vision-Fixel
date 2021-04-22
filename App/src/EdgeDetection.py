@@ -13,6 +13,6 @@ class edgeDetection():
         #e = input_image-erosion_image
 
         cv2.imwrite('temp.png', erosion_image)
-        toast("operation applied")
+        toast("Operation Applied")
 
-        print("opearation applied")
+        print("Operation Applied")
