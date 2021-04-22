@@ -33,7 +33,7 @@ class mainApp(MDApp):
 
     def imgEnhanceColorMethod(self):
         if mainApp.current_working_image is None:
-            toast("select the image first")
+            toast("Select the image first")
 
         else:
             obj = imgEnhanceColor()
@@ -43,7 +43,7 @@ class mainApp(MDApp):
 
     def contrastAdjustmentMethod(self):
         if mainApp.current_working_image is None:
-            toast("select the image first")
+            toast("Select the image first")
 
         else:
             obj = contrastAdjustment()
@@ -53,7 +53,7 @@ class mainApp(MDApp):
 
     def erosionMethod(self):
         if mainApp.current_working_image is None:
-            toast("select the image first")
+            toast("Select the image first")
 
         else:
             obj = erosion()
@@ -64,7 +64,7 @@ class mainApp(MDApp):
     def edgeDetectionMethod(self):
 
         if mainApp.current_working_image is None:
-            toast("select the image first")
+            toast("Select the image first")
 
         else:
             obj = edgeDetection()
@@ -96,11 +96,11 @@ class mainApp(MDApp):
         if mainApp.current_operation_performed is not None:
             im1 = Image.open('temp.png')
             im1.save(mainApp.current_operation_performed + '.png')
-            toast('saved as ' + mainApp.current_operation_performed + ' .png')
+            toast('Saved as ' + mainApp.current_operation_performed + ' .png')
             return 0
         im1 = Image.open('temp.png')
         im1.save('output.png')
-        toast('saved as output.png')
+        toast('Saved as output.png')
 
     def mainscreen_to_fileloaderscreen(self):
         self.screen.transition.direction = 'up'
