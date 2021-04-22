@@ -23,12 +23,11 @@
             height: 30
             Button:
                 text: "Cancel"
-                on_release:app.fileloaderscreen_to_mainscreen()
+                on_press: app.first_to_second()
 
             Button:
                 text: "Load"
                 on_release: app.load(filechooser.path, filechooser.selection)
-
 <FirstScreen>:
     MDIcon:
         icon: 'laptop'
@@ -45,13 +44,16 @@
         font_size: 15
     MDFloatingActionButton:
         icon: 'home'
-        halign: 'center'
-        font_size: 15
+        user_font_size: '20sp'
         pos_hint: {'center_x':0.5,'center_y':0.4}
         on_press: app.first_to_second()
 
+
+
+
 <SecondScreen>:
-    img: img
+
+    img:img
     BoxLayout:
         NavigationLayout:
             ScreenManager:
@@ -61,7 +63,7 @@
                         MDToolbar:
                             title: 'Menu'
                             elevation: 10
-                            left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
+                            left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
 
                         MDBottomAppBar:
                             MDToolbar:
@@ -77,7 +79,7 @@
 
                     Image:
                         id:img
-                        source: 'App/img/wlcm.png'
+                        source: 'img/img.png'
 
             MDNavigationDrawer:
                 id: nav_drawer
@@ -87,7 +89,8 @@
                     padding: '8dp'
 
                     Image:
-                        source:'App/img/a.png'
+                        source:'img/01.jpg'
+
 
                     MDLabel:
                         text: 'EFFECTS '
@@ -99,23 +102,30 @@
                     ScrollView:
                         MDList:
                             OneLineIconListItem:
-                                text:'Erosion'
+                                text: 'ResetImage'
+                                on_release:app.reset()
                                 IconLeftWidget:
-                                    icon:'airballoon'
+                                    icon: 'restore'
                             OneLineIconListItem:
-                                text:'Dilation'
+                                text: 'EdgeDetection'
+                                on_release:app.edgeDetectionMethod()
                                 IconLeftWidget:
-                                    icon:'bulma'
-                            OneLineIconListItem:
-                                text:'Edge Detection'
-                                IconLeftWidget:
-                                    icon:'panda'
-                            OneLineIconListItem:
-                                text:'Contrast Adjustment'
-                                IconLeftWidget:
-                                    icon:'beach'
+                                    icon: 'panda'
 
                             OneLineIconListItem:
-                                text:'Image Enchance Color'
+                                text: 'Erosion '
+                                on_release:app.erosionMethod()
                                 IconLeftWidget:
-                                    icon:'bee-flower'
+                                    icon:'airballoon'
+
+                            OneLineIconListItem:
+                                text: 'Contrast Adjustment'
+                                on_release:app.contrastAdjustmentMethod()
+                                IconLeftWidget:
+                                    icon: 'bulma'
+
+                            OneLineIconListItem:
+                                text: 'Enhance Color'
+                                on_release:app.imgEnhanceColorMethod()
+                                IconLeftWidget:
+                                    icon:'beach'
