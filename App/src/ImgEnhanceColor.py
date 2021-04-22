@@ -18,7 +18,7 @@ class imgEnhanceColor():
         enhancer = ImageEnhance.Color(image)
         # if we give 0.0 then it will inhance in white and black
         image = enhancer.enhance(0.5)
-        toast("operation applied")
+        toast("Operation Applied")
 
 
         image.save('temp.png')
