@@ -10,7 +10,7 @@ class imgEnhanceColor():
     def __init__(self):
         pass
     def process(self,file):
-        print("opearation applied")
+        print("Operation Applied")
         filename = file
         image = Image.open(filename)
         # size = width, height = image.size
@@ -22,5 +22,5 @@ class imgEnhanceColor():
 
 
         image.save('temp.png')
-        print("opearation applied")
+        print("Operation Applied")
 
