@@ -12,8 +12,8 @@ class erosion():
         erosion_image = cv2.erode(input_image, kernel, iterations=1)
 
         cv2.imwrite('temp.png', erosion_image)
-        toast("operation applied")
+        toast("Operation Applied")
 
-        print("opearation applied")
+        print("Operation Applied")
 
 
