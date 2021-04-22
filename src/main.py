@@ -34,9 +34,7 @@ class mainApp(MDApp):
         kernel = np.ones((5, 5), np.uint8)
         erosion_image = cv2.erode(input_image, kernel, iterations=1)
         erosion_image.save("temp.png")
-        # cv2.imshow('Erosion', erosion_image)
-        # erosion_image.save("temp.png")
-        # self.update("temp.png")
+
 
     def dilate(self):
         input_image = cv2.imread(self.current_working_img, cv2.IMREAD_COLOR)
