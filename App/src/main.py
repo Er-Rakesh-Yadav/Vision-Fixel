@@ -77,7 +77,7 @@ class mainApp(MDApp):
             self.sec.img.source = file
             self.sec.img.reload()
         except:
-            toast("OOPss!!!")
+            toast("Refreshed")
 
     def load(self, path, filename):
 
@@ -111,7 +111,7 @@ class mainApp(MDApp):
         self.screen.current = 'secondscreen'
 
     def build(self):
-        self.current_working_img = '/home/rakesh/PycharmProjects/Vision-Fixel/App/img/img.png'
+        self.current_working_img = 'img/img.png'
         MDApp.title = "Vision Fixel"
         MDApp.icon = 'img/vision_icon.png'
 
