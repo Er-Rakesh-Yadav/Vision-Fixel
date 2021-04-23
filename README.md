@@ -4,13 +4,12 @@
 **_Official Repository of Mini Project-II_**
 <br><hr>
 
-(Main-Screen)[Documents/screenshots/Screenshot01.png]
-
-(Main-UI)[Documents/screenshots/Screenshot02.png]
-
-(Main-Menu)[Documents/screenshots/Screenshot03.png]
-
-(Loader-Screen)[Documents/screenshots/Screenshot_04.png]
+<table>
+<tr>
+<td><img src="Documents/screenshots/Screenshot01.png"></td>
+<td><img src="Documents/screenshots/Screenshot03.png"></td>
+</tr>
+</table>
 
 ## Pre-Requisite
 <hr>
@@ -35,11 +34,24 @@
 <hr>
 
 ### Contributors
-- (**RAKESH YADAV**)[]
-- (**PRAGYA SHARMA**)[]
-- (**SHIVAM YADAV**)[]
+- [**RAKESH YADAV**](https://github.com/Er-Rakesh-Yadav)
+- [**PRAGYA SHARMA**](https://github.com/pragya-sharma)
+- [**SHIVAM YADAV**](https://github.com/shivamyadav37)
 
 ### Mentor
-- (**Prof. Vinay Agrawal**)[]
-  
+- [**Prof. Vinay Agrawal**]()
+
+<hr><br>
+<table>
+  <h2>Screenshots</h2>
+  <hr>
+<tr>
+<td><img src="Documents/screenshots/Screenshot01.png"></td>
+<td><img src="Documents/screenshots/Screenshot02.png"></td>
+</tr>
+<tr>
+<td><img src="Documents/screenshots/Screenshot_04.png"></td>
+<td><img src="Documents/screenshots/Screenshot03.png"></td>
+</tr>
+</table>
 
