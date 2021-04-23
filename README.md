@@ -55,9 +55,5 @@
 </tr>
 </table>
 
-<hr>
-### Video
-
-![](Documents/Vision Fixel Application.mp4)
 
 
