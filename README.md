@@ -39,7 +39,7 @@
 - [**SHIVAM YADAV**](https://github.com/shivamyadav37)
 
 ### Mentor
-- [**Prof. Vinay Agrawal**]()
+- [**Prof. Vinay Agrawal**](https://github.com/Er-Rakesh-Yadav/Vision-Fixel)
 
 <hr><br>
 <table>
@@ -54,4 +54,10 @@
 <td><img src="Documents/screenshots/Screenshot03.png"></td>
 </tr>
 </table>
+
+<hr>
+### Video
+
+![](Documents/Vision Fixel Application.mp4)
+
 
