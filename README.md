@@ -1,7 +1,7 @@
 # Vision-Fixel
 <hr><br>
 
-**_Official Repository of Mini Project-II_**
+**_Official Repository of [Mini Project-II](https://github.com/Er-Rakesh-Yadav/Vision-Fixel)_**
 <br><hr>
 
 <table>
@@ -39,7 +39,7 @@
 - [**SHIVAM YADAV**](https://github.com/shivamyadav37)
 
 ### Mentor
-- [**Prof. Vinay Agrawal**](https://github.com/Er-Rakesh-Yadav/Vision-Fixel)
+- [**Prof. Vinay Agrawal**](https://github.com/vinayagrawal40)
 
 <hr><br>
 <table>
